@@ -157,9 +157,9 @@ def main(topic):
                             value=json_serializer(order, SerializationContext(topic, MessageField.VALUE)),
                             on_delivery=delivery_report)
             i+=1
-            if i>1:
-              #produce only one record
-              break
+#             if i>1:
+#               #produce only two records
+#               break
     except KeyboardInterrupt:
         pass
     except ValueError:
