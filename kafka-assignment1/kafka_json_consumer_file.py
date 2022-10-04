@@ -61,7 +61,7 @@ def main(topic):
     schema_registry_conf = schema_config()
     schema_registry_client = SchemaRegistryClient(schema_registry_conf)
 
-    my_schema = schema_registry_client.get_schema(schema_id=100003).schema_str
+    my_schema = schema_registry_client.get_latest_version(topic+'-value').schema.schema_str
 
     json_deserializer = JSONDeserializer(my_schema,
                                          from_dict=Order.dict_to_order)
